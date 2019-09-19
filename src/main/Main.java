@@ -3,20 +3,20 @@ package main;
 import java.util.Scanner;
 
 class Book {
-    private String bname, author, isbn;
+    private String b_name, author, isbn;
 
     Book(String nam, String auth, String ISBN) {
-        this.bname = nam;
+        this.b_name = nam;
         this.author = auth;
         this.isbn = ISBN;
     }
 
-    public String getBname() {
-        return bname;
+    public String getB_name() {
+        return b_name;
     }
 
-    public void setBname(String na) {
-        this.bname = na;
+    public void setB_name(String b_name) {
+        this.b_name = b_name;
     }
 
     public String getAuthor() {
@@ -34,18 +34,29 @@ class Book {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
+    public String toString() {
+        return "-----------------------------\nBook Name:    " + b_name + "\nAuthor Name:    " + author + "\nISBN:    " + isbn + "\n-----------------------------";
+    }
 }
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+        Book[] ob = new Book[n];
         if (n == 0)
-            System.out.println("N/a");
+            System.out.println("N/A");
         else {
-            Book[] ob = new Book[n];
             for (int i = 0; i < n; i++) {
-                ob[i] = new Book(sc.nextLine(), sc.nextLine(), sc.nextLine());
+                String v = sc.nextLine().trim();
+                String nam1 = sc.nextLine().trim();
+                String auth1 = sc.nextLine().trim();
+                String isbn1 = sc.nextLine().trim();
+                ob[i] = new Book(nam1, auth1, isbn1);
+            }
+            for (int i = 0; i < n; i++) {
+                System.out.println(ob[i].toString());
             }
         }
     }
