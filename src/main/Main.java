@@ -36,7 +36,11 @@ class Book {
     }
 
     public String toString() {
-        return "-----------------------------\nBook Name:    " + b_name + "\nAuthor Name:    " + author + "\nISBN:    " + isbn + "\n-----------------------------";
+        return "-----------------------------\n" +
+                "Book Name:\t" + b_name +
+                "\nAuthor Name:\t" + author +
+                "\nISBN:\t" + isbn +
+                "\n-----------------------------";
     }
 }
 
@@ -49,7 +53,9 @@ public class Main {
             System.out.println("N/A");
         else {
             for (int i = 0; i < n; i++) {
-                String v = sc.nextLine().trim();
+                if (i == 0) {
+                    String v = sc.nextLine().trim();
+                }
                 String nam1 = sc.nextLine().trim();
                 String auth1 = sc.nextLine().trim();
                 String isbn1 = sc.nextLine().trim();
